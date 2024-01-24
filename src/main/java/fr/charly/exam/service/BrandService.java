@@ -40,10 +40,17 @@ public class BrandService implements DAOServiceInterface<Brand> {
 
     }
 
-//    public Brand create(BrandDTO brandDTO) {
-//        Brand brand = new Brand();
-//        brand.setName(brandDTO.getName());
-//        return brandRepository.saveAllAndFlush(brand);
-//    }
+    public Brand persist(BrandDTO brandDTO, Long id) {
+        if (id != null && brandRepository.findById(id).isEmpty()) {
+            throw new NotFoundInstantFakingException(
+                    "Brand", "id", id
+            );
+        }
+
+        Brand brand = new Brand();
+        brand.setId(id);
+        brand.setName(brandDTO.getName());
+        return brandRepository.save(brand);
+    }
 
 }

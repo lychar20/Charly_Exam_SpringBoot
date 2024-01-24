@@ -20,7 +20,7 @@ public class Model {
     private Long id;
     private String name;
     @ManyToOne
-    @JsonView(JsonViews.BrandListView.class)
     private Brand brand;
+
 
 }

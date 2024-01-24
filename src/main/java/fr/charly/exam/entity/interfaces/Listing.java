@@ -36,6 +36,7 @@ public class Listing {
     @ManyToOne
     private User user;
 
-    //private Model model;
+    @ManyToOne
+    private Model model;
 
 }

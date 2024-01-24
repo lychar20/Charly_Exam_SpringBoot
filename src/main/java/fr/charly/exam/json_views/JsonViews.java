@@ -10,4 +10,8 @@ public class JsonViews {
 
     public interface ModelListView{}
 
+    public interface UserListView extends UserShowView{}
+
+    public interface UserShowView{}
+
 }
